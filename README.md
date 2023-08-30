@@ -10,7 +10,7 @@ Scraping specific products from an E-commerce website (shopee)
 ### Code ใน jupyter notebook
 
 # Scraping
-<b>Install and import
+<b>Install and import</b>
 
 ```
 !pip install selenium
@@ -29,7 +29,7 @@ import time
 <p>&emsp;
 อันดับแรกก็โหลด web driver มาไว้ในไฟล์ project ก่อน ซึ่งตอนนี้ (29/8/2023) ตัวเบราเซอร์ที่ใช้เป็น version 115.0.5790.102 สามารถโหลดได้จาก
 </p>
-[คลิกตรงนี้][https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win32/chromedriver-win32.zip]
+[คลิกตรงนี้](https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win32/chromedriver-win32.zip)
 
 <p>&emsp;
 ก่อนหน้านี้ตอนที่สนใจการทำ web scraping ก็ทำให้รู้จัก beautifulSoup อยู่แล้ว แต่เพิ่งมารู้จักเจ้า selenium ที่ถ้าอยาก scraping จากเว็บประเภท e-commerce ก็ต้องรัน web driver ขึ้นมาใหม่เลยนั่นเอง 
@@ -219,7 +219,7 @@ for i in range(total_pages):
 </p>
 
 <p>&emsp;
-Save ไฟล์เป็น excel จบการฝึกทำ web scraping แล้วแต่เรามี 2 ไฟล์นะ อีกไฟล์คือเอา data ที่ scraping มาไป cleaning data สามารถดู code ได้ในไฟล์ [clean_data][https://github.com/nittayattngx/Web-scraping-E-commerce-web-site/blob/main/clean_data.ipynb] 
+Save ไฟล์เป็น excel จบการฝึกทำ web scraping แล้วแต่เรามี 2 ไฟล์นะ อีกไฟล์คือเอา data ที่ scraping มาไป cleaning data สามารถดู code ได้ในไฟล์ [clean_data](https://github.com/nittayattngx/Web-scraping-E-commerce-web-site/blob/main/clean_data.ipynb)
 </p>
 
 ## อธิบายการ cleaning data โดยมี step ดังนี้
@@ -230,5 +230,9 @@ Save ไฟล์เป็น excel จบการฝึกทำ web scraping 
 - ราคาที่อยู่ใน format ฿xxx – ฿xxx นำมาแยกออกจากกันแล้วสร้าง column ใหม่ เป็น minimum price และ maximum price
 - ลบ column ที่ไม่ได้ใช้ออก แล้วสั่ง save เป็นไฟล์ excel
 - Sold amount และ province เนื่องจาก data ไม่เยอะมาก ทำให้ cleaning data ใน excel ต่อได้ ใช้การ replace ข้อความที่ไม่จำเป็นด้วยค่าว่าง และ replace ‘พัน’ ด้วย ‘00’ เท่านี้ data set ก็พร้อมใช้งานแล้ว
+
+- <p align = "center">
+&nbsp;<img src = "https://github.com/nittayattngx/Web-scraping-E-commerce-web-site/blob/main/img/Screenshot%202023-08-29%20161055.png" width = "500"/>
+</p>
 
 ___
