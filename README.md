@@ -23,13 +23,12 @@ from selenium.webdriver.common.keys import Keys
 from bs4 import BeautifulSoup as bs 
 import pandas as pd
 import time 
-
 ```
 
 <p>&emsp;
-อันดับแรกก็โหลด web driver มาไว้ในไฟล์ project ก่อน ซึ่งตอนนี้ (29/8/2023) ตัวเบราเซอร์ที่ใช้เป็น version 115.0.5790.102 สามารถโหลดได้จาก
+อันดับแรกก็โหลด web driver มาไว้ในไฟล์ project ก่อน ซึ่งตอนนี้ (29/8/2023) ตัวเบราเซอร์ที่ใช้เป็น version 115.0.5790.102 สามารถโหลดได้จาก (https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win32/chromedriver-win32.zip)
 </p>
-(https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win32/chromedriver-win32.zip)
+
 
 <p>&emsp;
 ก่อนหน้านี้ตอนที่สนใจการทำ web scraping ก็ทำให้รู้จัก beautifulSoup อยู่แล้ว แต่เพิ่งมารู้จักเจ้า selenium ที่ถ้าอยาก scraping จากเว็บประเภท e-commerce ก็ต้องรัน web driver ขึ้นมาใหม่เลยนั่นเอง 
@@ -43,7 +42,6 @@ options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.get('https://shopee.co.th/')
-
 ```
 
 <p align = "center">
@@ -59,7 +57,6 @@ driver.get('https://shopee.co.th/')
 ```
 choose_thailang = driver.find_element(By.XPATH, '/html/body/div[2]/div[1]/div[1]/div/div[3]/div[1]/button')
 choose_thailang.click()
-
 ```
 
 <p>&emsp;
@@ -80,7 +77,6 @@ choose_thailang.click()
 ```
 close_ad = driver.execute_script('return document.querySelector("shopee-banner-popup-stateful").shadowRoot.querySelector("div.shopee-popup__close-btn")')
 close_ad.click()
-
 ```
 
 <p>&emsp;
@@ -109,7 +105,6 @@ search.send_keys(Keys.ENTER)
 ```
 login_user = driver.find_element(By.NAME, "loginKey")
 login_user.send_keys('your username')
-
 ```
 
 <p>&emsp;
@@ -123,7 +118,6 @@ all_products = []
 all_price = []
 all_soldAmount = []
 all_province = []
-
 ```
 
 <p>&emsp;
@@ -134,7 +128,6 @@ all_province = []
 driver.execute_script("document.body.style.zoom='10%' ") 
     data = driver.page_source 
     soup = bs(data) #ใช้ beautifulsoup 
-
 ```
 
 <p>&emsp;
@@ -152,7 +145,6 @@ syntax การดึงข้อมูลโดยใช้ class และ ta
 ```
 for i in products:
         all_products.append(i.text)
-
 ```
 
 <p>&emsp;
@@ -179,7 +171,6 @@ for i in range(total_pages):
     province = soup.find_all('div', {'class': 'zGGwiV'})
     
 
-    
     for i in products:
         all_products.append(i.text)
 
@@ -197,9 +188,7 @@ for i in range(total_pages):
     next_page_btn = driver.find_element(By.XPATH, '/html/body/div[1]/div/div[2]/div/div/div[2]/div[3]/div[1]/div[2]/button[2]')
     driver.execute_script("arguments[0].scrollIntoView();", next_page_btn)
     driver.execute_script("arguments[0].click();", next_page_btn)
-    
     time.sleep(3)
-
 ```
 
 <p>&emsp;
