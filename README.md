@@ -3,7 +3,7 @@ Scraping specific products from an E-commerce website (shopee)
 
 <p>&emsp;
 การ scraping website เพื่อให้ได้ข้อมูลที่เราต้องการมาใช้ ก็เป็นอีกหนึ่ง project ที่น่าสนใจ เลยศึกษาทั้งจากใน blog ต่าง ๆ รวมถึงวิธีการทำที่มากมายจาก youtube (แหล่งขุมทรัพย์ความรู้ที่ใช้บ่อยเลย ฮา) จากนั้นก็ตัดสินใจว่า scraping products จากเว็บ E-commerce สีส้มชื่อดัง
-&emsp;
+<br>&emsp;
 สำหรับ blog นี้ก็เป็นบันทึกการเรียนรู้ผ่าน project อีกครั้ง
 </p>
 
@@ -29,11 +29,11 @@ import time
 <p>&emsp;
 อันดับแรกก็โหลด web driver มาไว้ในไฟล์ project ก่อน ซึ่งตอนนี้ (29/8/2023) ตัวเบราเซอร์ที่ใช้เป็น version 115.0.5790.102 สามารถโหลดได้จาก
 </p>
-[คลิกตรงนี้](https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win32/chromedriver-win32.zip)
+!alt [คลิกตรงนี้](https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/115.0.5790.102/win32/chromedriver-win32.zip)
 
 <p>&emsp;
 ก่อนหน้านี้ตอนที่สนใจการทำ web scraping ก็ทำให้รู้จัก beautifulSoup อยู่แล้ว แต่เพิ่งมารู้จักเจ้า selenium ที่ถ้าอยาก scraping จากเว็บประเภท e-commerce ก็ต้องรัน web driver ขึ้นมาใหม่เลยนั่นเอง 
-&emsp;
+<br>&emsp;
 รัน web driver แล้วเข้าไปที่หน้าเว็บที่เราต้องการ
 </p>
 
@@ -52,7 +52,7 @@ driver.get('https://shopee.co.th/')
 
 <p>&emsp;
 พอเข้ามาแล้ว ก็จะมีเจ้าสิ่งนี้เด้งขึ้นมา ‘เลือกภาษา’
-&emsp;
+<br>&emsp;
 ถ้าเราต้องการเลือกภาษาไทย เราก็ต้องสั่งให้มันเลือกปุ่มบนใช่ไหม? เราเลยโค้ดให้ web driver หาปุ่มภาษาไทยจากหน้าเว็บปัจจุบัน โดยใช้ XPATH ชี้เป้าให้มันว่าตรงนี้คือปุ่มที่อยากกดนะ แล้วสั่งให้มันคลิกที่ปุ่มนั้น
 </p>
 
@@ -72,7 +72,7 @@ choose_thailang.click()
 
 <p>&emsp;
 ‘shadow root’ เจ้าสิ่งนี้จะทำให้โปรแกรมเข้าไปไม่ถึงส่วนที่เราต้องการเพราะดันอยู่ข้างในมันอีกที แต่โชคดีที่เป็น case study ที่น่าสนใจ ทำให้มีคนสอนวิธีรับมือกับสิ่งนี้ด้วย 
-&emsp;
+<br>&emsp;
 นั่นคือการ execute java script แล้วใช้คำสั่งของ java script query โหนดที่เก็บเจ้า shadow root ไว้ จากนั้นก็เข้าไปที่ shadow root และ query ตำแหน่งที่เราต้องการออกมาโดยใช้เป็น class แทนที่จะเป็น XPATH เก็บมาไว้ในตัวแปรแล้วคลิกไป เท่านี้ก็ปิด pop up โฆษณาได้แล้ว
 </p>
 
@@ -115,7 +115,7 @@ login_user.send_keys('your username')
 <p>&emsp;
 ทำเหมือนกันทั้ง 2 ช่อง แล้วเพิ่มโค้ดให้กด ‘เข้าสู่ระบบ’ ไป หากเข้ามาเป็นครั้งแรกเว็บจะขอให้ยืนยันตัวตน จากนั้นเว็บก็จะพาเข้าสู่หน้า products ที่เรากรอกไปก่อนหน้านี้
 &emsp;
-ก่อนอื่นต้องดูก่อนว่าอยากได้ข้อมูลอะไรบ้าง แล้วสร้าง list ว่างไว้เตรียมใส่ข้อมูลนั้น ๆ
+<br>ก่อนอื่นต้องดูก่อนว่าอยากได้ข้อมูลอะไรบ้าง แล้วสร้าง list ว่างไว้เตรียมใส่ข้อมูลนั้น ๆ
 </p>
 
 ```
@@ -235,4 +235,4 @@ Save ไฟล์เป็น excel จบการฝึกทำ web scraping 
 &nbsp;<img src = "https://github.com/nittayattngx/Web-scraping-E-commerce-web-site/blob/main/img/Screenshot%202023-08-29%20161055.png" width = "500"/>
 </p>
 
-___
+---
