@@ -192,7 +192,7 @@ for i in range(total_pages):
 ```
 
 <p>&emsp;
-<b>ตัวอย่างข้อมูลที่ได้ใน list<b>
+<b>ตัวอย่างข้อมูลที่ได้ใน list</b>
 </p>
 
 <p align = "center">
