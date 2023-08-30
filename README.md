@@ -220,7 +220,7 @@ Save ไฟล์เป็น excel จบการฝึกทำ web scraping 
 - ลบ column ที่ไม่ได้ใช้ออก แล้วสั่ง save เป็นไฟล์ excel
 - Sold amount และ province เนื่องจาก data ไม่เยอะมาก ทำให้ cleaning data ใน excel ต่อได้ ใช้การ replace ข้อความที่ไม่จำเป็นด้วยค่าว่าง และ replace ‘พัน’ ด้วย ‘00’ เท่านี้ data set ก็พร้อมใช้งานแล้ว
 
-- <p align = "center">
+<p align = "center">
 &nbsp;<img src = "https://github.com/nittayattngx/Web-scraping-E-commerce-web-site/blob/main/img/Screenshot%202023-08-29%20161055.png" width = "500"/>
 </p>
 
